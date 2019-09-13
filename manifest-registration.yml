@@ -3,10 +3,11 @@ applications:
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: tracker-registration-ganesh-cognizant-training.cfapps.io
-  memory: 512MB
+  memory: 500MB
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: http://tracker-registration-ganesh-cognizant-training.cfapps.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    JAVA_OPTS: '-Xmx250m -Xss100m'
   services:
   - tracker-registration-database
