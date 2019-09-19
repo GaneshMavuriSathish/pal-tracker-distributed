@@ -8,11 +8,21 @@ public class ProjectClient {
     private final String registrationServerEndpoint;
 
     public ProjectClient(RestOperations restOperations, String registrationServerEndpoint) {
-        this.restOperations= restOperations;
+        this.restOperations = restOperations;
         this.registrationServerEndpoint = registrationServerEndpoint;
     }
 
     public ProjectInfo getProject(long projectId) {
+        ProjectInfo projectInfo = null;
+        System.out.println("Registration server endpoint is : " + registrationServerEndpoint);
+        System.out.println("Project id is : " + projectId);
+//        try {
+//            projectInfo = restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            projectInfo = restOperations.getForObject(registrationServerEndpoint + "/allocations?projectId=" + projectId, ProjectInfo.class);
+//        }
+//        return projectInfo;
         return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
     }
 }
