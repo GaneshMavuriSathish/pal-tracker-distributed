@@ -3,7 +3,7 @@ apply plugin: "io.spring.dependency-management"
 
 dependencyManagement {
     imports {
-        mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:2.0.2.RELEASE"
+        mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:$springCloudServicesClientLibrariesVersion"
     }
 }
 
@@ -22,3 +22,4 @@ dependencies {
 
     testCompile project(":components:test-support")
 }
+

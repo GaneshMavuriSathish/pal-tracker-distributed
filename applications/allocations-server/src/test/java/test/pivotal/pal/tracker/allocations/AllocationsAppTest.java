@@ -4,7 +4,9 @@ import io.pivotal.pal.tracker.allocations.App;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class AllocationsAppTest {
 
@@ -12,8 +14,8 @@ public class AllocationsAppTest {
     public void embedded() {
         App.main(new String[]{});
 
-        String response = new RestTemplate().getForObject("http://localhost:8181/allocations?projectId=0", String.class);
-
-        assertThat(response).isEqualTo("[]");
+        List response = new RestTemplate().getForObject("http://localhost:8181/allocations?projectId=0", List.class);
+        assertEquals(0, response.size());
+//        assertThat(response).isEqualTo("[]");
     }
 }
