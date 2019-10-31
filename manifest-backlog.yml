@@ -1,5 +1,5 @@
 applications:
-- name: tracker-backlog
+- name: tracker-backlog-gan
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
   - route: tracker-backlog-ganesh-cognizant-training.cfapps.io
@@ -8,7 +8,9 @@ applications:
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
     JAVA_OPTS: '-Xmx250m -Xss100m'
+    GRANT_TYPE: client_credentials
   services:
   - tracker-backlog-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso

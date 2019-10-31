@@ -1,5 +1,5 @@
 applications:
-- name: tracker-timesheets
+- name: tracker-timesheets-gan
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
   - route: tracker-timesheets-ganesh-cognizant-training.cfapps.io
@@ -8,7 +8,9 @@ applications:
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
     JAVA_OPTS: '-Xmx250m -Xss100m'
+    GRANT_TYPE: client_credentials
   services:
   - tracker-timesheets-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso

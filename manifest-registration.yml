@@ -1,5 +1,5 @@
 applications:
-- name: tracker-registration
+- name: tracker-registration-gan
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: tracker-registration-ganesh-cognizant-training.cfapps.io
@@ -8,6 +8,8 @@ applications:
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
     JAVA_OPTS: '-Xmx250m -Xss100m'
+    GRANT_TYPE: client_credentials
   services:
   - tracker-registration-database
   - tracker-service-registry
+  - tracker-sso
