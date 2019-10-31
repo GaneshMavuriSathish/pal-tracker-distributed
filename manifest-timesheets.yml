@@ -2,7 +2,7 @@ applications:
 - name: tracker-timesheets-gan
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: tracker-timesheets-ganesh-cognizant-training.cfapps.io
+  - route: tracker-timesheets-ganeshV2-cognizant-training.cfapps.io
   memory: 500MB
   instances: 1
   env:

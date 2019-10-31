@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration-gan
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: tracker-registration-ganesh-cognizant-training.cfapps.io
+  - route: tracker-registration-ganeshV2-cognizant-training.cfapps.io
   memory: 500MB
   instances: 1
   env:
