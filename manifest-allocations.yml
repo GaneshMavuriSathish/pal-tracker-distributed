@@ -1,8 +1,8 @@
 applications:
-- name: tracker-allocations-gan
+- name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: tracker-allocations-ganeshV2-cognizant-training.cfapps.io
+  - route: tracker-allocations-ganesh-cognizant-training.cfapps.io
   memory: 500MB
   instances: 1
   env:

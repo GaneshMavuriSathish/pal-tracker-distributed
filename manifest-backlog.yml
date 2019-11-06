@@ -1,8 +1,8 @@
 applications:
-- name: tracker-backlog-gan
+- name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: tracker-backlog-ganeshV2-cognizant-training.cfapps.io
+  - route: tracker-backlog-ganesh-cognizant-training.cfapps.io
   memory: 500MB
   instances: 1
   env:
